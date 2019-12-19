@@ -1,0 +1,117 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    background-color: #cccccc;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.header,
+.about,
+.umotvorine {
+    height: 100vh;
+}
+
+
+/* UMOTVOINE */
+.umotvorine {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222222;
+}
+
+.umotvorine-heading {
+    position: relative;
+    text-align: center;
+    font-size: 5em;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300;
+    width: 100%;
+    color: #ccc;
+    animation: headingEntry 1.5s linear, headingEntry 1s linear reverse;
+    animation-delay: 0s, 9s;
+}
+
+.umotvorine-heading::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 5px;
+    animation: umotvorineLoader 10s linear;
+    background-image: linear-gradient(to right, transparent, #FF7800);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.typing-indicator {
+    display: inline-block;
+    height: calc(1em - 10px);
+    width: 2px;
+    background-color: #fff;
+
+    position: relative;
+    top: 5px;
+
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes headingEntry {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes umotvorineLoader {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

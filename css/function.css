@@ -1,0 +1,38 @@
+.wrapper {
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    font-size: 2em;
+}
+
+input[type=number] {
+    border: 0;
+    border-bottom: 1px solid black;
+    font-size: 1em;
+    width: 100px;
+    text-align: center;
+    outline: none;
+}
+
+input[type=number]:focus {
+    /*Maybe add something later*/
+}
+
+.canvas-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+#functionDrawing {
+    background-color: #eee;
+}

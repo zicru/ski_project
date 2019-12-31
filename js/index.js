@@ -19,7 +19,7 @@ function updateUmotvorina() {
 
 function writeUmotvorina(wordToWrite) {
     let letters = wordToWrite.split(""),
-        intervalTime = 8000 / letters.length,
+        intervalTime = 6500 / letters.length,
         index = 0;
 
     let writingInterval = setInterval(() => {

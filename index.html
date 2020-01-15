@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SKI Projekat</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Dosis:300|Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300|Raleway:400,700|Bilbo+Swash+Caps&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -15,19 +15,47 @@
     <header class="header">
         Reklama sa efektom po zelji
     </header>
-    <nav>
-        <a href="pages/gallery.html">Galerija</a>
-        <a href="pages/function.html">Funkcija</a>
-        <a href="pages/numbers.html">Numbers</a>
+    <nav class="page-navigation">
+        <div class="toggle active">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-menu active">
+            <a href="pages/gallery.html">Galerija</a>
+            <a href="pages/function.html">Funkcija</a>
+            <a href="pages/numbers.html">Numbers</a>
+        </div>
     </nav>
     <section class="about">
-        O studentu...
+        <div class="container">
+            <div class="about-data">
+                <div class="avatar">
+                    <img src="img/IMG_0877.jpeg" alt="" id="avatar">
+                    <div class="hidden">
+                        <p>"Keep calm and use flexbox"</p>
+                    </div>
+                </div>
+                <h2>Jovan Ružić</h2>
+            </div>
+            <div class="about-links">
+                <a href="https://github.com/zicru" target="_blank">
+                    <img src="img/github.svg" alt="">
+                </a>
+                <a href="https://www.linkedin.com/in/jruzic/" target="_blank">
+                    <img src="img/linkedin.svg" alt="">
+                </a>
+                <a href="mailto:ruzicjovan96@gmail.com" target="_blank">
+                    <img src="img/gmail.svg" alt="">
+                </a>
+            </div>
+        </div>
     </section>
     <article class="umotvorine">
 
     </article>
     <footer>
-        MIT License - Copyright &copy; 2019 zicru
+        MIT License <br> Copyright &copy; 2019 by Zicru
     </footer>
 
     <script src="js/index.js"></script>

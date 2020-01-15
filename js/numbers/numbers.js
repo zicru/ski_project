@@ -1,6 +1,8 @@
 let numbers = document.querySelectorAll('.number'),
     numbersResults = [];
 
+// TODO: Maybe go with choosing 5 single digit, 5 dual digit numbers, 6 tri digit numbers
+
 numbers.forEach(number => {
     number.addEventListener('click', function () {
         processNumberClick(this);
@@ -27,7 +29,7 @@ function processNumberClick(numberElement) {
 
 function chooseNumbersForGame(minNumber, maxNumber) {
     numbers.forEach(number => {
-        let numberValue = Math.round((Math.random() * ( maxNumber - minNumber )) + minNumber); // get a number from 100 to 999, to make it more fun
+        let numberValue = Math.round((Math.random() * ( maxNumber - minNumber )) + minNumber);
 
         number.innerHTML = "" + numberValue;
         numbersResults.push({
@@ -35,6 +37,69 @@ function chooseNumbersForGame(minNumber, maxNumber) {
             pressed: false
         });
     });
+}
+
+function chooseNumbersForGameV2() {
+    let activeIteration = 0,
+        numberRanges = [
+            {
+                "iterations": 3,
+                "numbers" : {
+                    "from": 1,
+                    "to": 9
+                }
+            },
+            {
+                "iterations": 5,
+                "numbers" : {
+                    "from": 10,
+                    "to": 99
+                }
+            },
+            {
+                "iterations": 8,
+                "numbers" : {
+                    "from": 100,
+                    "to": 999
+                }
+            },
+        ];
+
+    numbers.forEach(number => {
+        let numberOfIterations = numberRanges[activeIteration].iterations;
+
+        if (numberOfIterations < 1) {
+            activeIteration += 1;
+        }
+
+        let chosenNumber;
+        do {
+            chosenNumber = chooseNumberInRange(numberRanges[activeIteration].numbers.from, numberRanges[activeIteration].numbers.to);
+        } while (isAlreadyChosen(chosenNumber));
+
+        numbersResults.push({
+            value: chosenNumber,
+            pressed: false
+        });
+
+        number.innerHTML = "" + chosenNumber;
+        numberRanges[activeIteration].iterations -= 1;
+    });
+}
+
+function chooseNumberInRange(min, max) {
+    return Math.round((Math.random() * ( max - min )) + min);
+}
+
+function isAlreadyChosen(number) {
+    for (let i = 0; i < numbersResults.length; i++) {
+        let numberValue = numbersResults[i].value;
+
+        if (numberValue === number) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function isSmallestNotClicked(number) {
@@ -49,7 +114,8 @@ function isSmallestNotClicked(number) {
 
 function startGame(readyTimer = 3, gameTimer = 10) {
     numbersResults = [];
-    chooseNumbersForGame(1, 999);
+    chooseNumbersForGameV2();
+    // chooseNumbersForGame(1, 999);
     document.querySelector('.game-board').style.display = 'block';
 
     let startGameCountdownElement = document.querySelector('.starting-timer'),

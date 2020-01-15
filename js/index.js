@@ -6,7 +6,14 @@ let umotvorineElement = document.querySelector(".umotvorine"),
         "Ko laže za tebe, lagaće i protiv tebe.",
         "Ko mnogo priča, ili sve zna, ili sve laže."
     ],
-    lastUmotvorinaIndex;
+    lastUmotvorinaIndex,
+    navToggle = document.querySelector('.toggle'),
+    navMenu = document.querySelector('.nav-menu');
+
+navToggle.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
 
 function updateUmotvorina() {
     let umotvorinaIndex = getRandomUmotvorinaIndex();
@@ -44,3 +51,11 @@ function getRandomUmotvorinaIndex() {
 
 updateUmotvorina();
 let umotvorineInterval = setInterval(updateUmotvorina, 10 * 1000);
+
+
+
+
+
+
+
+

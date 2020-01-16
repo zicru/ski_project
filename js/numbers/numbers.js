@@ -43,21 +43,21 @@ function chooseNumbersForGameV2() {
     let activeIteration = 0,
         numberRanges = [
             {
-                "iterations": 3,
+                "iterations": 2,
                 "numbers" : {
                     "from": 1,
                     "to": 9
                 }
             },
             {
-                "iterations": 5,
+                "iterations": 4,
                 "numbers" : {
                     "from": 10,
                     "to": 99
                 }
             },
             {
-                "iterations": 8,
+                "iterations": 10,
                 "numbers" : {
                     "from": 100,
                     "to": 999

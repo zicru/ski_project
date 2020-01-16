@@ -4,6 +4,7 @@ html, body {
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
     background-color: #cccccc;
+    overflow-x: hidden;
 }
 
 *,
@@ -18,6 +19,12 @@ html, body {
     height: 100vh;
 }
 
+/* HEADER */
+
+.header {
+    overflow: hidden;
+    background-color: #111111;
+}
 
 /* UMOTVOINE */
 .umotvorine {
@@ -202,6 +209,33 @@ html, body {
 
     cursor: pointer;
     z-index: 1001;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.page-navigation .toggle .line {
+    height: 3px;
+    width: 60%;
+    background-color: #333;
+    margin: 3px 0;
+    position: relative;
+    transform-origin: center;
+    transition: all .3s ease-in-out;
+}
+
+.page-navigation .toggle.active .line:first-child {
+    transform: translateY(9px) rotateZ(45deg);
+}
+.page-navigation .toggle.active .line:last-child {
+    transform: translateY(-9px) rotateZ(-45deg);
+}
+.page-navigation .toggle.active .line:nth-child(2) {
+    transform: translateX(100px);
 }
 
 /* FOOTER */

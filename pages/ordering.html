@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis:300|Raleway:400,700|Bilbo+Swash+Caps&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/ordering.css">
 </head>
 
 <body>
@@ -28,11 +28,76 @@
         </div>
     </nav>
 
-    <div class="menu"></div>
+    <div class="menu" data-active-sheet="1">
+        <div class="menu-sheet active left" data-sheet="1">
+            <div class="menu-page front">1</div>
+            <div class="menu-page back">2</div>
+        </div>
 
-    <div class="modal active order-modal">
-        <div class="modal-content">heheheheheheheh</div>
+        <div class="menu-sheet active right" data-sheet="2">
+            <div class="menu-page front">3</div>
+            <div class="menu-page back">4</div>
+        </div>
+
+        <div class="menu-sheet right" data-sheet="3">
+            <div class="menu-page front">4</div>
+            <div class="menu-page back">5</div>
+        </div>
+
+        <div class="menu-sheet right" data-sheet="4">
+            <div class="menu-page front">6</div>
+            <div class="menu-page back">7</div>
+        </div>
+
+        <div class="menu-sheet right" data-sheet="5">
+            <div class="menu-page front">8</div>
+            <div class="menu-page back">9</div>
+        </div>
     </div>
 
-<script src="../js/common.js"></script>
+    <div class="modal order-modal">
+        <div class="modal-content">
+            <div class="close-modal">
+                <img src="../img/close.png" alt="">
+            </div>
+            <h2>Poručivanje</h2>
+
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Ime i Prezime:</label>
+                    <input type="text" name="name" id="name" pattern="[A-Za-z]+ [A-Za-z]+" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Ulica i broj:</label>
+                    <input type="text" name="address" id="address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="isBuilding">Zgrada</label>
+                    <input type="checkbox" name="isBuilding" id="isBuilding">
+                    <label for="isBuilding" class="styled-label"></label>
+                </div>
+
+                <div class="form-group aptNumber">
+                    <label for="aptNumber">Broj stana:</label>
+                    <input type="number" name="aptNumber" id="aptNumber" min="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Broj telefona:</label>
+                    <input type="tel" name="phone" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Poruči" id="subimt" pattern="[0-9]+">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/ordering.js"></script>
 </body>
+</html>

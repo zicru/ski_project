@@ -1,0 +1,60 @@
+.aptNumber {
+    display: none;
+}
+
+.aptNumber.active {
+    display: block;
+}
+
+/* MENU STYLES */
+
+.menu {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    background-color: #333;
+    color: #fff;
+
+    font-size: 3em;
+}
+
+.menu-sheet {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+
+    transform-origin: right;
+}
+
+.menu-sheet.active {
+    z-index: 2;
+}
+
+/*DELETE NEXT TWO LINES*/
+.menu-sheet:nth-child(odd) .menu-page { background-color: #222; }
+.menu-sheet:nth-child(even) .menu-page { background-color: #444; }
+
+.menu-sheet.left { transform: rotateY(0deg); }
+.menu-sheet.right { transform: rotateY(180deg); }
+
+.menu-sheet.left .menu-page {
+
+}
+.menu-sheet.right .menu-page {
+    transform: rotateY(180deg);
+}
+
+.menu-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

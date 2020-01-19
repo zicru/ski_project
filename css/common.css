@@ -38,11 +38,25 @@ html, body {
     display: flex;
 }
 
-.modal-content {
+.modal .modal-content {
     background-color: #fff;
     border-radius: 20px;
     padding: 1em 2em;
     box-shadow: 0 0 20px 5px rgba(0,0,0,.2);
+
+    position: relative;
+}
+
+.modal .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close-modal img {
+    width: 30px;
+    height: 30px;
 }
 
 

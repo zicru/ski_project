@@ -5,9 +5,49 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Galerija</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300|Raleway:400,700|Bilbo+Swash+Caps&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/gallery.css">
 </head>
 <body>
 
+    <header class="gallery-header">
+        <h2>Galerija</h2>
+        <div class="zoom-control">
+            <p id="zoomLevelIndicator">10</p>
+            <div class="zoom-description">Zoom level:</div>
+            <input type="range" min="40" max="150" value="100" id="zoomLevel">
+        </div>
+    </header>
+
+    <nav class="page-navigation">
+        <div class="toggle">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-menu">
+            <a href="../index.html">Početna</a>
+            <a href="gallery.html">Galerija</a>
+            <a href="ordering.html">Poručivanje hrane</a>
+            <a href="numbers.html">Brojevi</a>
+        </div>
+    </nav>
+    
+    <div class="gallery-content">
+    </div>
+
+    <div class="image-modal-container">
+        <img src="#" alt="" id="modal-image">
+        <div id="close-modal">
+            &times;
+        </div>
+    </div>
+
+<script src="../js/common.js"></script>
+<script src="../js/gallery.js"></script>
 </body>
 </html>

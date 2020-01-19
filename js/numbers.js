@@ -1,5 +1,6 @@
 let numbers = document.querySelectorAll('.number'),
-    numbersResults = [];
+    numbersResults = [],
+    numbersPlacement = [];
 
 // TODO: Maybe go with choosing 5 single digit, 5 dual digit numbers, 6 tri digit numbers
 
@@ -43,21 +44,21 @@ function chooseNumbersForGameV2() {
     let activeIteration = 0,
         numberRanges = [
             {
-                "iterations": 2,
+                "iterations": 3,
                 "numbers" : {
                     "from": 1,
                     "to": 9
                 }
             },
             {
-                "iterations": 4,
+                "iterations": 6,
                 "numbers" : {
                     "from": 10,
                     "to": 99
                 }
             },
             {
-                "iterations": 10,
+                "iterations": 7,
                 "numbers" : {
                     "from": 100,
                     "to": 999
@@ -65,7 +66,8 @@ function chooseNumbersForGameV2() {
             },
         ];
 
-    numbers.forEach(number => {
+
+    for(let i = 0; i < numbers.length; i++) {
         let numberOfIterations = numberRanges[activeIteration].iterations;
 
         if (numberOfIterations < 1) {
@@ -82,9 +84,17 @@ function chooseNumbersForGameV2() {
             pressed: false
         });
 
-        number.innerHTML = "" + chosenNumber;
+
+        let randomIndex = Math.round(Math.random() * (numbersPlacement.length - 1));
+        let chosenPlace = numbersPlacement[randomIndex];
+
+        console.log(chosenPlace);
+
+        numbers[chosenPlace].innerHTML = "" + chosenNumber;
+        numbersPlacement.splice(numbersPlacement.indexOf(chosenPlace), 1);
+
         numberRanges[activeIteration].iterations -= 1;
-    });
+    }
 }
 
 function chooseNumberInRange(min, max) {
@@ -114,6 +124,10 @@ function isSmallestNotClicked(number) {
 
 function startGame(readyTimer = 3, gameTimer = 10) {
     numbersResults = [];
+    numbersPlacement = [
+        0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+    ];
+
     chooseNumbersForGameV2();
     // chooseNumbersForGame(1, 999);
     document.querySelector('.game-board').style.display = 'block';

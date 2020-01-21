@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SKI Projekat</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Dosis:300|Raleway:400,700|Bilbo+Swash+Caps&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300|Raleway:400,700|Bilbo+Swash+Caps|Caveat|Kalam|Niconne&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/ordering.css">
@@ -28,31 +28,188 @@
         </div>
     </nav>
 
-    <div class="menu" data-active-sheet="1">
-        <div class="menu-sheet active left" data-sheet="1">
-            <div class="menu-page front">1</div>
-            <div class="menu-page back">2</div>
-        </div>
+    <div class="menu-wrapper">
+        <div class="menu" data-active-sheet="0">
+            <div class="menu-sheet left active" data-sheet="1">
+                <div class="menu-page front">
+                    1
+                </div>
+                <div class="menu-page instructions back">
+                    <h2>Dobrodošli!</h2>
+                    <ul>
+                        <li>
+                            Da biste dodali jelo u porudžbinu, kliknite na jelo koje želite.
+                        </li>
+                        <li>
+                            Ukoliko ste napravili grešku, kliknite ponovo da biste ga izbacili iz porudžbine.
+                        </li>
+                        <li>
+                            Podatke o vašoj porudžbini možete videti na poslednjoj strani menija.
+                        </li>
+                        <li>
+                            Kada završite sa biranjem, kliknite na "poruči", i popunite informacije koje su tražene.
+                        </li>
+                    </ul>
+                    <p>
+                        Prijatno!
+                    </p>
+                </div>
+            </div>
 
-        <div class="menu-sheet active right" data-sheet="2">
-            <div class="menu-page front">3</div>
-            <div class="menu-page back">4</div>
-        </div>
+            <div class="menu-sheet active right" data-sheet="2">
+                <div class="menu-page front food-page">
+                    <div class="meal" data-meal="1">
+                        <div class="info">
+                            <img src="../img/menu/1.jpg" alt="">
+                            <h3>Sendvič sa piletinom</h3>
+                        </div>
+                        <h4 class="price">$4.60</h4>
+                    </div>
 
-        <div class="menu-sheet right" data-sheet="3">
-            <div class="menu-page front">4</div>
-            <div class="menu-page back">5</div>
-        </div>
+                    <div class="meal" data-meal="2">
+                        <div class="info">
+                            <img src="../img/menu/2.jpg" alt="">
+                            <h3>Sendvič sa kačkavaljem</h3>
+                        </div>
+                        <h4 class="price">$3.25</h4>
+                    </div>
+                    <a href="#" class="flip-page">
+                        <img src="../img/next.svg" alt="">
+                    </a>
+                </div>
+                <div class="menu-page back food-page">
+                    <div class="meal" data-meal="3">
+                        <div class="info">
+                            <img src="../img/menu/3.jpg" alt="">
+                            <h3>Pizza</h3>
+                        </div>
+                        <h4 class="price">$8.90</h4>
+                    </div>
 
-        <div class="menu-sheet right" data-sheet="4">
-            <div class="menu-page front">6</div>
-            <div class="menu-page back">7</div>
-        </div>
+                    <div class="meal" data-meal="4">
+                        <div class="info">
+                            <img src="../img/menu/4.jpg" alt="">
+                            <h3>Biftek</h3>
+                        </div>
+                        <h4 class="price">$36.90</h4>
+                    </div>
+                    <a href="#" class="flip-page">
+                        <img src="../img/back.svg" alt="">
+                    </a>
+                </div>
+            </div>
 
-        <div class="menu-sheet right" data-sheet="5">
-            <div class="menu-page front">8</div>
-            <div class="menu-page back">9</div>
+            <div class="menu-sheet right" data-sheet="3">
+                <div class="menu-page front food-page">
+                    <div class="meal" data-meal="5">
+                        <div class="info">
+                            <img src="../img/menu/5.jpg" alt="">
+                            <h3>Sushi</h3>
+                        </div>
+                        <h4 class="price">$10.45</h4>
+                    </div>
+
+                    <div class="meal" data-meal="6">
+                        <div class="info">
+                            <img src="../img/menu/6.jpg" alt="">
+                            <h3>Pasta</h3>
+                        </div>
+                        <h4 class="price">$4.95</h4>
+                    </div>
+                    <a href="#" class="flip-page">
+                        <img src="../img/next.svg" alt="">
+                    </a>
+                </div>
+                <div class="menu-page back food-page">
+                    <div class="meal" data-meal="7">
+                        <div class="info">
+                            <img src="../img/menu/7.jpg" alt="">
+                            <h3>Supa</h3>
+                        </div>
+                        <h4 class="price">$3.45</h4>
+                    </div>
+
+                    <div class="meal" data-meal="8">
+                        <div class="info">
+                            <img src="../img/menu/8.jpg" alt="">
+                            <h3>Burger</h3>
+                        </div>
+                        <h4 class="price">$10.00</h4>
+                    </div>
+                    <a href="#" class="flip-page">
+                        <img src="../img/back.svg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="menu-sheet right" data-sheet="4">
+                <div class="menu-page front food-page">
+                    <div class="meal" data-meal="9">
+                        <div class="info">
+                            <img src="../img/menu/9.jpg" alt="">
+                            <h3>Engleski doručak</h3>
+                        </div>
+                        <h4 class="price">$13.90</h4>
+                    </div>
+
+                    <div class="meal" data-meal="10">
+                        <div class="info">
+                            <img src="../img/menu/10.jpg" alt="">
+                            <h3>Američke palačinke</h3>
+                        </div>
+                        <h4 class="price">$8.45</h4>
+                    </div>
+                    <a href="#" class="flip-page">
+                        <img src="../img/next.svg" alt="">
+                    </a>
+                </div>
+                <div class="menu-page back food-page">
+                    <div class="meal" data-meal="11">
+                        <div class="info">
+                            <img src="../img/menu/11.jpg" alt="">
+                            <h3>Čokoladni kolač</h3>
+                        </div>
+                        <h4 class="price">$2.15</h4>
+                    </div>
+
+                    <div class="meal" data-meal="12">
+                        <div class="info">
+                            <img src="../img/menu/12.jpg" alt="">
+                            <h3>Cheesecake</h3>
+                        </div>
+                        <h4 class="price">$2.95</h4>
+                    </div>
+                    <a href="#" class="flip-page">
+                        <img src="../img/back.svg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="menu-sheet right" data-sheet="5">
+                <div class="menu-page front order-page">
+                    <h3>Vaša porudžbina sadrži:</h3>
+                    <ul id="order-items">
+
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li>
+                            Ukupna cena
+                            <span class="total-price">
+                                $
+                                <span class="price">0</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu-page back">
+                    10
+                </div>
+            </div>
         </div>
+        <button id="finish-choosing">
+            Poruči
+        </button>
     </div>
 
     <div class="modal order-modal">
@@ -86,11 +243,11 @@
 
                 <div class="form-group">
                     <label for="phone">Broj telefona:</label>
-                    <input type="tel" name="phone" id="phone" required>
+                    <input type="tel" name="phone" id="phone" required pattern="[0-9]+">
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="Poruči" id="subimt" pattern="[0-9]+">
+                    <input type="submit" value="Poruči" id="subimt">
                 </div>
             </form>
         </div>

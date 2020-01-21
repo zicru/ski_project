@@ -1,22 +1,52 @@
+.menu-wrapper {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    overflow: hidden;
+
+    background-color: #222222;
+    background-image: url(../img/bg.svg);
+    background-size: 400px;
+
+    perspective: 620px;
+}
+
 .aptNumber {
-    display: none;
+    display: none !important;
 }
 
 .aptNumber.active {
-    display: block;
+    display: flex !important;
 }
 
 /* MENU STYLES */
 
 .menu {
     position: relative;
-    height: 100vh;
-    width: 100%;
+    height: 90vh;
+    width: 80%;
 
     background-color: #333;
     color: #fff;
 
-    font-size: 3em;
+    perspective: 1700px;
+    perspective-origin: center;
+
+    margin-top: 10px;
+
+    box-shadow: 0 0 60px 0 rgba(0,0,0,.6);
+    transition: transform .5s ease-in;
+
+    font-family: 'Caveat', cursive;
+}
+
+.menu.finished {
+    transform: translateZ(-500px) rotateX(50deg);
 }
 
 .menu-sheet {
@@ -25,26 +55,37 @@
     height: 100%;
     z-index: 1;
 
+    transition: all 1s linear;
+
     transform-origin: right;
 }
 
 .menu-sheet.active {
-    z-index: 2;
+    z-index: 4;
 }
-
-/*DELETE NEXT TWO LINES*/
-.menu-sheet:nth-child(odd) .menu-page { background-color: #222; }
-.menu-sheet:nth-child(even) .menu-page { background-color: #444; }
 
 .menu-sheet.left { transform: rotateY(0deg); }
 .menu-sheet.right { transform: rotateY(180deg); }
 
-.menu-sheet.left .menu-page {
-
+.menu-sheet.left.flipping .menu-page {
+    transform: rotateY(180deg);
 }
 .menu-sheet.right .menu-page {
     transform: rotateY(180deg);
 }
+.menu-sheet.right.flipping .menu-page {
+    transform: rotateY(0deg);
+}
+
+.menu-sheet.left .menu-page.front { z-index: 2; border-left: 8px dashed black; }
+.menu-sheet.left .menu-page.back { z-index: 3; border-right: 8px dashed black; }
+.menu-sheet.left.flipping .menu-page.front { z-index: 3; }
+.menu-sheet.left.flipping .menu-page.back { z-index: 2; }
+
+.menu-sheet.right .menu-page.front { z-index: 3; border-left: 8px dashed black; }
+.menu-sheet.right .menu-page.back { z-index: 2; border-right: 8px dashed black; }
+.menu-sheet.right.flipping .menu-page.front { z-index: 2; }
+.menu-sheet.right.flipping .menu-page.back { z-index: 3; }
 
 .menu-page {
     position: absolute;
@@ -54,7 +95,227 @@
     height: 100%;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    background-image: url(../img/wood5.jpg);
+
+    padding: 100px 40px;
 }
+
+.food-page .meal {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.food-page .meal.chosen::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-image: url("../img/menu/selected.png");
+    background-size: 100% 100%;
+}
+
+.food-page .meal img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+
+    border: 2px solid #FF7800;
+}
+
+.meal .info {
+    display: flex;
+    align-items: center;
+}
+
+.info h3 {
+    margin-left: 20px;
+    font-size: 2em;
+}
+
+.meal .price {
+    font-size: 3em;
+    color: #FF7800;
+}
+
+
+.menu-page.order-page {
+    font-size: 1.8em;
+}
+
+.menu-page.order-page h3 {
+    color: #FF7800;
+}
+
+.menu-page.order-page hr {
+    width: 100%;
+}
+
+.menu-page.order-page ul {
+    width: 100%;
+    margin: 0;
+}
+
+.menu-page.order-page ul li {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.menu-page.order-page li button {
+    font-size: .7em;
+    padding: .3em 1em;
+    border: none;
+    color: #FF7800;
+    background-color: #151515;
+    cursor: pointer;
+}
+
+.menu-page .flip-page {
+    position: absolute;
+    bottom: 30px;
+
+    width: 30px;
+    height: 30px;
+
+    display: block;
+}
+
+.menu-page.front .flip-page { right: 30px; }
+.menu-page.back .flip-page { left: 30px; }
+
+.menu-page .flip-page img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* SPECIFIC PAGES */
+
+.instructions {
+    font-size: 2em;
+}
+
+.instructions h2,
+.instructions p {
+    margin: 0;
+}
+
+#finish-choosing {
+    font-size: 1.5em;
+    padding: .2em 1em;
+
+    cursor: pointer;
+    z-index: 300;
+
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #FF7800;
+}
+
+
+.order-modal .modal-content {
+    box-shadow: 0 0 30px 0 rgba(0,0,0,.7);
+    font-size: .8em;
+}
+
+.order-modal .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-modal h2 {
+    text-align: center;
+    font-size: 1.6em;
+    margin-top: 0;
+}
+
+.order-modal label {
+    font-size: 1em;
+    border: none;
+    color: #000;
+}
+
+.order-modal input[type = "text"],
+.order-modal input[type = "tel"],
+.order-modal input[type = "number"] {
+    font-size: .8em;
+    padding: .2em;
+    border: none;
+    border-bottom: 1px solid #FF7800;
+    color: #000;
+    outline: none;
+    margin-left: 20px;
+}
+
+.order-modal #isBuilding {
+    display: none;
+}
+
+.order-modal .modal-content .styled-label {
+    position: relative;
+    display: block;
+    width: 1em;
+    height: 1em;
+    border: 1px solid #FF7800;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.order-modal #isBuilding:checked + .styled-label::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    background-color: #FF7800;
+    border-radius: 2px;
+}
+
+.order-modal #subimt {
+    font-size: .8em;
+    padding: .2em 1em;
+    cursor: pointer;
+    z-index: 300;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #FF7800;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
